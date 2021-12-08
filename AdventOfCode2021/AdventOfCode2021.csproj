@@ -55,8 +55,7 @@
     <Compile Include="Day6\LanternFish.cs" />
     <Compile Include="Day7\Day7.cs" />
     <Compile Include="Day8\Day8.cs" />
-    <Compile Include="Day8\Signal.cs" />
-    <Compile Include="Day8\UniqueSignals.cs" />
+    <Compile Include="Day8\Display.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

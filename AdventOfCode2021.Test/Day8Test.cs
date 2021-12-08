@@ -25,8 +25,11 @@ namespace AdventOfCode2021.Test
         [TestMethod]
         public void Part2Test()
         {
+            var testDisplay = new Day8.Display("acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf");
+            Assert.AreEqual(5353, testDisplay.CalculateOutput());
+
             var d = new Day8.Day8(true);
-            Assert.AreEqual(168, d.Part2());
+            Assert.AreEqual(61229, d.Part2());
         }
 
         [TestMethod]
