@@ -10,6 +10,8 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
+            var day9 = new Day9.Day9();
+            day9.VisualizePart2();
         }
     }
 }

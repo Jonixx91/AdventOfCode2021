@@ -33,7 +33,7 @@ namespace AdventOfCode2021.Test
         public void Part2()
         {
             var d = new Day9.Day9();
-            Clipboard.SetText(d.Part2().ToString()); // 1342440 incorrect :/
+            Clipboard.SetText(d.Part2().ToString()); // 1342440 incorrect, 1224300 :/
         }
     }
 }

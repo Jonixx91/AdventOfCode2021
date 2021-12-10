@@ -8,7 +8,7 @@ namespace AdventOfCode2021
 {
     public abstract class Day
     {
-        protected readonly List<string> Input;
+        public List<string> Input { get; }
 
         protected Day(bool isTest = false)
         {

@@ -60,6 +60,8 @@
     <Compile Include="Day8\Display.cs" />
     <Compile Include="Day10\Day10.cs" />
     <Compile Include="Day9\Day9.cs" />
+    <Compile Include="Day9\Minimum.cs" />
+    <Compile Include="Day9\TraverseData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
