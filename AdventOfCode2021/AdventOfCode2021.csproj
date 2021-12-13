@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day.cs" />
+    <Compile Include="Day13\Day13.cs" />
     <Compile Include="Day12\Cave.cs" />
     <Compile Include="Day12\Day12.cs" />
     <Compile Include="Day11\Day11.cs" />
@@ -52,6 +53,10 @@
     <Compile Include="Day12\VisitingStrategy\SingleSmallCaveTwice.cs" />
     <Compile Include="Day12\VisitingStrategy\SmallCavesOnce.cs" />
     <Compile Include="Day12\VisitingStrategy\VisitingStrategy.cs" />
+    <Compile Include="Day13\Folding\FoldOperation.cs" />
+    <Compile Include="Day13\Folding\Left.cs" />
+    <Compile Include="Day13\Folding\Up.cs" />
+    <Compile Include="Day13\Point.cs" />
     <Compile Include="Day3\Day3.cs" />
     <Compile Include="Day4\BingoBoard.cs" />
     <Compile Include="Day4\BoardHandler.cs" />
@@ -75,6 +80,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Day13\input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day13\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Day12\input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

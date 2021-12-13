@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day13Test.cs" />
     <Compile Include="Day12Test.cs" />
     <Compile Include="Day11Test.cs" />
     <Compile Include="Day10Test.cs" />
