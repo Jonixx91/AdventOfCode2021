@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AdventOfCode2021.Day13.Folding;
+using Medallion.Collections;
 
 namespace AdventOfCode2021.Day15
 {
@@ -28,35 +29,42 @@ namespace AdventOfCode2021.Day15
                     _graph[x, y] = int.Parse(new string(new[] { Input[y][x] }));
         }
 
+        private class DistanceComparer : IComparer<Point>
+        {
+            public int Compare(Point x, Point y)
+            {
+                return x.Distance.CompareTo(y.Distance);
+            }
+        }
+
         private int RunDijkstra()
         {
-            var distance = new Dictionary<Point, int>();
-            var toVisit = new List<Point>();
+            var points = new Point[_maxX, _maxY];
+            var toVisit = new VisitDictionary();
             for (int y = 0; y < _maxY; y++)
             {
                 for (int x = 0; x < _maxX; x++)
                 {
                     var p = new Point(x, y);
-                    distance[p] = Int32.MaxValue;
+                    points[x, y] = p;
                     toVisit.Add(p);
                 }
             }
+            
 
-            distance[new Point(0, 0)] = 0;
-            while (toVisit.Count > 0)
+            points[0, 0].Distance = 0;
+            while (toVisit.HasValues())
             {
-                var closest = toVisit.Select(v => (Point: v, Distance: distance[v])).OrderBy(t => t.Distance).First().Point;
-                toVisit.Remove(closest);
-
-                foreach (var n in closest.GetNeighborgs(_maxX, _maxY))
+                var closest = toVisit.GetNextValue();
+                foreach (var n in closest.GetNeighborgs(points))
                 {
-                    var newDist = distance[closest] + _graph[n.X, n.Y];
-                    if (newDist < distance[n])
-                        distance[n] = newDist;
+                    var newDist = closest.Distance + _graph[n.X, n.Y];
+                    if (newDist < n.Distance)
+                        toVisit.UpdateDistance(n, newDist);
                 }
             }
 
-            return distance[new Point(_maxX - 1, _maxY - 1)];
+            return points[_maxX - 1, _maxY - 1].Distance;
         }
 
         public int Part1() => RunDijkstra();

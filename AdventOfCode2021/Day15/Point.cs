@@ -10,6 +10,7 @@ namespace AdventOfCode2021.Day15
     {
         public int X { get; }
         public int Y { get; }
+        public int Distance { get; set; } = int.MaxValue;
 
         public Point(int x, int y)
         {
@@ -24,34 +25,34 @@ namespace AdventOfCode2021.Day15
                    Y == point.Y;
         }
 
-        public override int GetHashCode() => ToString().GetHashCode();
+        public override int GetHashCode()
+        {
+            int hashCode = 1861411795;
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
+            return hashCode;
+        }
 
         public bool Equals(Point x, Point y) => x.Equals(y);
 
         public int GetHashCode(Point obj) => obj.GetHashCode();
 
-        private bool IsValid(int maxX, int maxY)
+        public IEnumerable<Point> GetNeighborgs(Point[,] points)
         {
-            return X >= 0 &&
-                   X < maxX &&
-                   Y >= 0 &&
-                   Y < maxY;
-
-        }
-
-        public IEnumerable<Point> GetNeighborgs(int maxX, int maxY)
-        {
-            var ns = new Point[]
+            var ns = new (int X, int Y)[]
             {
-                new Point(X - 1, Y),
-                new Point(X + 1, Y),
-                new Point(X, Y - 1),
-                new Point(X, Y + 1)
+                (X - 1, Y),
+                (X + 1, Y),
+                (X, Y - 1),
+                (X, Y + 1)
             };
-            foreach (var n in ns)
+            foreach (var t in ns)
             {
-                if (n.IsValid(maxX, maxY))
-                    yield return n;
+                if (t.X >= 0 &&
+                    t.X < points.GetLength(0) &&
+                    t.Y >= 0 &&
+                    t.Y < points.GetLength(1))
+                    yield return points[t.X, t.Y];
             }
         }
 

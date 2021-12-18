@@ -10,9 +10,8 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            var day = new Day13.Day13();
+            var day = new Day15.Day15();
             day.Part2();
-            day.Visualize();
 
             Console.ReadKey();
         }
