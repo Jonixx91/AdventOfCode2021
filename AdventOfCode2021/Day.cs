@@ -18,7 +18,9 @@ namespace AdventOfCode2021
             string file = System.IO.Path.Combine(
                 dir,
                 isTest ? "test.txt" : "input.txt");
-            Input = System.IO.File.ReadAllLines(file).ToList();
+            Input = new List<string>();
+            if (System.IO.File.Exists(file))
+                Input.AddRange(System.IO.File.ReadAllLines(file));
         }
     }
 }

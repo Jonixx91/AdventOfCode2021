@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day.cs" />
+    <Compile Include="Day17\ProbeVelocity.cs" />
+    <Compile Include="Day17\Point.cs" />
+    <Compile Include="Day17\Day17.cs" />
     <Compile Include="Day15\VisitDictionary.cs" />
     <Compile Include="Day16\Day16.cs" />
     <Compile Include="Day15\Day15.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Day16\LiteralPacket.cs" />
     <Compile Include="Day16\OperatorPacket.cs" />
     <Compile Include="Day16\Packet.cs" />
+    <Compile Include="Day17\Target.cs" />
     <Compile Include="Day3\Day3.cs" />
     <Compile Include="Day4\BingoBoard.cs" />
     <Compile Include="Day4\BoardHandler.cs" />
