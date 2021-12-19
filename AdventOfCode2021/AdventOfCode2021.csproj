@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day.cs" />
+    <Compile Include="Day18\Day18.cs" />
     <Compile Include="Day17\ProbeVelocity.cs" />
     <Compile Include="Day17\Point.cs" />
     <Compile Include="Day17\Day17.cs" />
@@ -70,6 +71,9 @@
     <Compile Include="Day16\OperatorPacket.cs" />
     <Compile Include="Day16\Packet.cs" />
     <Compile Include="Day17\Target.cs" />
+    <Compile Include="Day18\Number.cs" />
+    <Compile Include="Day18\Pair.cs" />
+    <Compile Include="Day18\Symbol.cs" />
     <Compile Include="Day3\Day3.cs" />
     <Compile Include="Day4\BingoBoard.cs" />
     <Compile Include="Day4\BoardHandler.cs" />
@@ -93,6 +97,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Day18\input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day18\test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Day16\input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -174,11 +184,6 @@
     <Content Include="Day9\test.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="MedallionPriorityQueue">
-      <Version>1.1.0</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

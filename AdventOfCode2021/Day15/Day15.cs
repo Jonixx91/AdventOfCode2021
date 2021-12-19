@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AdventOfCode2021.Day13.Folding;
-using Medallion.Collections;
 
 namespace AdventOfCode2021.Day15
 {
